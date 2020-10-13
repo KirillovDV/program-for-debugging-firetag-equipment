@@ -1,2 +1,2 @@
 import serial
-ser = serial.Serial('/dev/tty.usbserial-1420', 9600) 
+# ser = serial.Serial('/dev/tty.usbserial-1420', 9600) 
