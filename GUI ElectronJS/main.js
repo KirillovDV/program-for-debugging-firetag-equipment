@@ -9,7 +9,7 @@ function createWindow() {
     win = new BrowserWindow({
         width: 1000,
         height: 800,
-        icon: __dirname + "/static/icon.png",
+        icon: __dirname + "/static/img/icon.png",
         minWidth: 1000, // минимальная ширина окна
         minHeight: 800, // минимальная высота окна
         maxWidth: 1920, // максимальная ширина окна
@@ -18,7 +18,7 @@ function createWindow() {
     });
 
     win.loadURL(url.format({
-        pathname: path.join(__dirname, 'index.html'),
+        pathname: path.join(__dirname, 'templates/index.html'),
         protocol: 'file',
         slashes: true
     }));
