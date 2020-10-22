@@ -4,12 +4,11 @@ const { app, BrowserWindow } = require('electron');
 
 let win;
 
-// Function create Window
 function createWindow() {
     win = new BrowserWindow({
-        width: 1000,
-        height: 800,
-        icon: __dirname + "/static/img/icon.png",
+        width: 1000, //стандартная ширина окна
+        height: 800, //стандартная высота окна
+        icon: __dirname + "/static/img/icon.png", // добавленик иконки 
         minWidth: 1000, // минимальная ширина окна
         minHeight: 800, // минимальная высота окна
         maxWidth: 1920, // максимальная ширина окна
@@ -18,7 +17,7 @@ function createWindow() {
     });
 
     win.loadURL(url.format({
-        pathname: path.join(__dirname, 'templates/index.html'),
+        pathname: path.join(__dirname, 'templates/index.html'), // файл первого html шаблона,
         protocol: 'file',
         slashes: true
     }));
