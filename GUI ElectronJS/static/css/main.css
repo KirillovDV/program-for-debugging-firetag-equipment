@@ -20,6 +20,16 @@ body {
     /* background: linear-gradient(to top left, rgb(255, 255, 255), rgb(145, rgb(73, 73, 73), rgb(44, 44, 44), rgb(70, 70, 70); */
 }
 
+.mainCavanas {
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -125px 0 0 -125px;
+
+}
+
 .title {
     margin-top: -80px;
     text-align: center;

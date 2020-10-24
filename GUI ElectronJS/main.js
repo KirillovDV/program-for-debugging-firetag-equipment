@@ -7,10 +7,10 @@ let win;
 function createWindow() {
     win = new BrowserWindow({
         width: 1000, //стандартная ширина окна
-        height: 800, //стандартная высота окна
+        height: 700, //стандартная высота окна
         icon: __dirname + "/static/img/icon.png", // добавленик иконки 
         minWidth: 1000, // минимальная ширина окна
-        minHeight: 800, // минимальная высота окна
+        minHeight: 700, // минимальная высота окна
         maxWidth: 1920, // максимальная ширина окна
         maxHeight: 1080, // максимальная высота окна
         resizable: true, // будет ли окно изменять размеры
