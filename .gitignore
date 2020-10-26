@@ -1,5 +1,6 @@
 __pycache__
 .vscode
 .DS_Store
+GUI ElectronJS/static/.DS_Store
 GUI ElectronJS/node_modules
 GUI ElectronJS/package-lock.json
