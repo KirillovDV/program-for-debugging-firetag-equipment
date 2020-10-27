@@ -11,7 +11,3 @@
 ### Меню настройки персонажа (MacOS)
 
 ![screenshot](Screenshots/OsX_PlayerConfig.png)
-
-
-
-
