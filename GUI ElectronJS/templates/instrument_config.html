@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALT-tag configurator</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/main.css">
+    <script src="calc.js"></script>
+    <!-- <script>
+        require('./render.js');
+    </script> -->
+</head>
+
+<body>
+
+    <div class="backButton">
+        <div class="button">
+            <a href="instrument_selection.html">Назад<span class="shift">›</span></a>
+            <div class="mask"></div>
+        </div>
+    </div>
+
+    <div class="TablePlayerCheckBoxes">
+        <table>
+            <tr>
+                <td>ID <br>
+                    <input type="text" placeholder="Уникальный id" size="13">
+                </td>
+                <td>Команда <br>
+                    <input type="text" placeholder="Название" size="10">
+                </td>
+                <td>Дружественный огонь <br>
+                    <p><input name="fier" type="radio" value="yes">Включен</p>
+                    <p><input name="fier" type="radio" value="no">Выключен</p>
+                </td>
+                <td>Кол-во жизни (HP) (ед) <br>
+                    <input type="text" placeholder="от 0 до 1024" size="10">
+                </td>
+            </tr>
+            <td>Кол-во брони (ед) <br>
+                <input type="text" size="10">
+            </td>
+            <td>Время шока (сек) <br>
+                <input type="text" size="10">
+            </td>
+            <td>Неуязвимость (сек) <br>
+                    <input type="text" placeholder="от 0 до 1024" size="10">
+            </td>
+            <td> Время оживления (сек) <br>
+                <input type="text" size="10">
+            </td>
+            <tr>
+
+            </tr>
+        </table>
+    </div>
+
+    <div class="footer">
+        <p>Вам доступны следующие COM порты:</p>
+    </div>
+
+</body>
+
+</html>
