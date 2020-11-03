@@ -1,1 +1,0 @@
-$e('ctrl esc').bind("alert('Ыыы');");
