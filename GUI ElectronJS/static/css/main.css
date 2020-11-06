@@ -142,17 +142,18 @@ div.footer {
 }
 
 table {
-    position: absolute;
-    margin: 0px 0;
+    position: fixed;
+    margin: 3% 0;
     text-align: center;
     border: 2px solid rgb(0, 0, 0);
     border-spacing: 10px;
     border-radius: 13px;
     font-size: 14px;
-    width: 99%;
+    width: 98.5%;
     height: 70%;
     font-family: 'Roboto';
-    top: 12%;
+    margin-top: 100px;
+
 }
 
 td, th {
