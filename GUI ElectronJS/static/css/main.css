@@ -17,7 +17,7 @@ body {
     background-attachment: fixed;
     background-size: cover;
     background-color: #ffffff;
-    /* background: linear-gradient(to top left, rgb(255, 255, 255), rgb(145, rgb(73, 73, 73), rgb(44, 44, 44), rgb(70, 70, 70); */
+
 }
 
 .mainCavanas {
@@ -191,6 +191,7 @@ td, th {
     font: 30px "Roboto";
     padding: 0;
     text-shadow: 0 1px 0 rgba(255, 255, 255, .5);
+    padding-bottom: 7%;
 }
 
 .rectangle a {
