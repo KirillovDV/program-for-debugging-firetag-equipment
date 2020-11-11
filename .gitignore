@@ -1,5 +1,6 @@
 .vscode
 .DS_Store
+logic
 GUI ElectronJS/static/.DS_Store
 GUI ElectronJS/node_modules
 GUI ElectronJS/package-lock.json
