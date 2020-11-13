@@ -152,7 +152,7 @@ table {
     width: 98.5%;
     height: 70%;
     font-family: 'Roboto';
-    margin-top: 100px;
+    margin-top: 10px;
 
 }
 
@@ -174,7 +174,63 @@ td, th {
     color: white;
     background: rgb(0, 0, 0);
 }
+ 
+.form_radio_group {
+	display: inline-block;
+	overflow: hidden;
+}
+.form_radio_group-item {
+	display: block;
+	float: left;    
+}
+.form_radio_group input[type=radio] {
+	display: none;
+}
+.form_radio_group label {
+	display: inline-block;
+	cursor: pointer;
+	padding: 0px 15px;
+	line-height: 34px;
+	border: 1px solid rgb(0, 0, 0);
+	border-right: none;
+	user-select: none;
+}
+ 
+.form_radio_group .form_radio_group-item:first-child label {
+	border-radius: 6px 0 0 6px;
+}
+.form_radio_group .form_radio_group-item:last-child label {
+	border-radius: 0 6px 6px 0;
+	border-right: 1px solid #999;
+}
+ 
+/* Checked */
+.form_radio_group .color1 input[type=radio]:checked + label {
+	background: yellow;
+}
 
+.form_radio_group .color2 input[type=radio]:checked + label {
+	background: green;
+}
+
+.form_radio_group .color3 input[type=radio]:checked + label {
+	background: blue;
+}
+
+.form_radio_group .color4 input[type=radio]:checked + label {
+	background: red;
+}
+ 
+/* Hover */
+.form_radio_group label:hover {
+	color: #666;
+}
+ 
+/* Disabled */
+.form_radio_group input[type=radio]:disabled + label {
+	background: #efefef;
+	color: #666;
+}
 .backButton {
     position: absolute;
     /* Абсолютное позиционирование */

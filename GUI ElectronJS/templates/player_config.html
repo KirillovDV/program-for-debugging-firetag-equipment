@@ -20,6 +20,9 @@
             <div class="mask"></div>
         </div>
     </div>
+    <div class="pageTitle">
+        <h1>Конфигуратор персонажа</h1>
+    </div>
 
     <div class="TablePlayerCheckBoxes">
         <table>
@@ -28,7 +31,25 @@
                     <input type="text" placeholder="Уникальный id" size="13">
                 </td>
                 <td>Команда <br>
-                    <input type="text" placeholder="Название" size="10">
+                <td>Цвет команды<br><br>
+                    <div class="form_radio_group">
+                        <div class="form_radio_group-item color1">
+                            <input id="radio-1" type="radio" name="radio" value="1" checked>
+                            <label for="radio-1">Желтый</label>
+                        </div>
+                        <div class="form_radio_group-item color2">
+                            <input id="radio-2" type="radio" name="radio" value="2">
+                            <label for="radio-2">Зеленый</label>
+                        </div>
+                        <div class="form_radio_group-item color3">
+                            <input id="radio-3" type="radio" name="radio" value="3">
+                            <label for="radio-3">Синий</label>
+                        </div>
+                        <div class="form_radio_group-item color4">
+                            <input id="radio-4" type="radio" name="radio" value="4">
+                            <label for="radio-4">Красный</label>
+                        </div>
+                    </div>
                 </td>
                 <td>Дружественный огонь <br>
                     <p><input name="fier" type="radio" value="yes">Включен</p>
@@ -45,7 +66,7 @@
                 <input type="text" size="10">
             </td>
             <td>Неуязвимость (сек) <br>
-                    <input type="text" placeholder="от 0 до 1024" size="10">
+                <input type="text" placeholder="от 0 до 1024" size="10">
             </td>
             <td> Время оживления (сек) <br>
                 <input type="text" size="10">
