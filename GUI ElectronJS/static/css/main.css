@@ -60,7 +60,7 @@ body {
     right: 30px;
 }
 
-div.footer {
+.footer {
     position: fixed;
     /* Фиксированное положение */
     left: 0;
@@ -76,6 +76,16 @@ div.footer {
     width: 100%;
     /* Ширина слоя */
     font-family: "Roboto";
+}
+
+.footer img {
+    width: 50px;
+    height: 50px;
+    position: absolute; /* Абсолютное позиционирование */
+    bottom: 10px; /* Положение от нижнего края */
+    right: 50px; /* Положение от правого края */
+    line-height: 1px;
+    cursor: pointer;
 }
 
 .CreateTeamField {
