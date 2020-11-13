@@ -31,30 +31,37 @@
                 <td>ID <br>
                     <input type="text" placeholder="Уникальный id" size="13">
                 </td>
-                <td>Команда <br>
                 <td>Цвет команды<br><br>
                     <div class="form_radio_group">
                         <div class="form_radio_group-item color1">
-                            <input id="radio-1" type="radio" name="radio" value="1" checked>
+                            <input id="radio-1" type="radio" name="color" value="1" checked>
                             <label for="radio-1">Желтый</label>
                         </div>
                         <div class="form_radio_group-item color2">
-                            <input id="radio-2" type="radio" name="radio" value="2">
+                            <input id="radio-2" type="radio" name="color" value="2">
                             <label for="radio-2">Зеленый</label>
                         </div>
                         <div class="form_radio_group-item color3">
-                            <input id="radio-3" type="radio" name="radio" value="3">
+                            <input id="radio-3" type="radio" name="color" value="3">
                             <label for="radio-3">Синий</label>
                         </div>
                         <div class="form_radio_group-item color4">
-                            <input id="radio-4" type="radio" name="radio" value="4">
+                            <input id="radio-4" type="radio" name="color" value="4">
                             <label for="radio-4">Красный</label>
                         </div>
                     </div>
                 </td>
-                <td>Дружественный огонь <br>
-                    <p><input name="fier" type="radio" value="yes">Включен</p>
-                    <p><input name="fier" type="radio" value="no">Выключен</p>
+                <td>Дружественный огонь <br><br>
+                    <div class="form_toggle">
+                        <div class="form_toggle-item item-1">
+                            <input id="fid-1" type="radio" name="radio" value="off" checked>
+                            <label for="fid-1">OFF</label>
+                        </div>
+                        <div class="form_toggle-item item-2">
+                            <input id="fid-2" type="radio" name="radio" value="on">
+                            <label for="fid-2">ON</label>
+                        </div>
+                    </div>
                 </td>
                 <td>Кол-во жизни (HP) (ед) <br>
                     <input type="text" placeholder="от 0 до 1024" size="10">
