@@ -290,7 +290,7 @@ td, th {
     padding: 5px;
 }
 
-.rectangle {
+.catalog {
     margin-top: 80px;
     counter-reset: li;
     list-style: none;
@@ -300,7 +300,7 @@ td, th {
     padding-bottom: 7%;
 }
 
-.rectangle a {
+.catalog a {
     position: relative;
     display: block;
     padding: .4em .4em .4em .8em;
@@ -311,11 +311,11 @@ td, th {
     transition: all .3s ease-out;
 }
 
-.rectangle a:hover {
+.catalog a:hover {
     background: #3f3f3f;
 }
 
-.rectangle a:before {
+.catalog a:before {
     content: counter(li);
     counter-increment: li;
     position: absolute;
@@ -330,7 +330,7 @@ td, th {
     font-weight: bold;
 }
 
-.rectangle a:after {
+.catalog a:after {
     position: absolute;
     content: "";
     border: .5em solid transparent;
@@ -340,7 +340,7 @@ td, th {
     transition: all .3s ease-out;
 }
 
-.rectangle a:hover:after {
+.catalog a:hover:after {
     left: -.5em;
     border-left-color: #9097A2;
 }
