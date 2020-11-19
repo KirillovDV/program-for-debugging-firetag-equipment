@@ -29,7 +29,10 @@
         <table>
             <tr>
                 <td>ID <br>
-                    <input type="text" placeholder="Уникальный id" size="13">
+                    <input type="text" placeholder="Уникальный id" size="13" disabled><br><br>
+                    <button type="button" class="resetId">Сбросить </button>
+                    <button type="button" class="manualInput">Ввести вручную</button>
+                </td>
                 </td>
                 <td>Цвет команды<br><br>
                     <div class="form_radio_group">
@@ -89,7 +92,7 @@
         <p>Вам доступны следующие COM порты:</p>
     </div>
     <div class="footerUploader">
-        <a href="#" class="createBtn" onclick="alert("Не доступно!")">Создать нового персонажа</a>
+        <a href="#" class="createBtn" onclick="">Создать нового персонажа</a>
         <a href="#" class="uploadBtn">Загрузить на устройство</a>
       </div>
 </body>

@@ -4,3 +4,4 @@ logic
 GUI ElectronJS/static/.DS_Store
 GUI ElectronJS/node_modules
 GUI ElectronJS/package-lock.json
+GUI ElectronJS/templates/settings_modal.html
