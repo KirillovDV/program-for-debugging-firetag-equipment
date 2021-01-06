@@ -7,10 +7,6 @@ def serial_scanner():
     for element in list_of_serial_ports:
         connected.append(element.device)
     # connected = str(connected)
-    print(connected)
-    for element in connected:
-        print(element)
-
-
-if __name__ == '__main__':
-    serial_scanner()
+    # for element in connected:
+    #     print(element)
+    return connected
