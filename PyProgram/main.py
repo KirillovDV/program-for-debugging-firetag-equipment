@@ -74,7 +74,9 @@ def start():
 
     choose_com = choose(serial_scanner())
     selected_port = choose_com
-    print(selected_port)
+    print(f'Вы выбрали {selected_port}')
+
+
 
 
 def help():
