@@ -1,6 +1,6 @@
 from colorama import Fore
 from serial_port_scanner import serial_scanner
-from menus import main_menu, second_menu
+from literals import main_menu, second_menu
 import os
 import interpreter
 
@@ -64,7 +64,6 @@ def comports():
 
 
 def start():
-    global massive
     print('Сейчас вам будет предложенно выбрать COM (serial) порт, к которому подключено ваше устройство. '
           'Далее вы перейдете к настройке устройства. \nЕсли вы не увидите подключенное устройство, введите \'help\''
           'и следуйте инструкциям\n\n')
@@ -89,8 +88,7 @@ def start():
         else:
             # если ошибки нет, то выходим из цикла
             flag = 0
-
-
+        print(massive)
 
 
 def help():
@@ -99,27 +97,5 @@ def help():
 
 
 if __name__ == '__main__':
-    # import time
-    # import serial
-    # import datetime
-    #
-    # ser = serial.Serial('/dev/cu.usbserial-1410')
-    # received = []
-    #
-    # ser.write(b'begin\n')
-    # time.sleep(5)
-    #
-    # start = datetime.datetime.now()
-    # for i in range(1, 100):
-    #     ser.write(b'test%i\r\n' % i)
-    #     time.sleep(0.005)
-    #     while ser.inWaiting() > 0:
-    #         line = ser.readline()
-    #         if line:
-    #             received.append(line.decode().strip())
-    #
-    # print(datetime.datetime.now() - start)
-    # print(received)
-    # start()
 
-    start()
+    menu()
