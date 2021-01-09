@@ -2,6 +2,7 @@ from colorama import Fore
 from serial_port_scanner import serial_scanner
 from menus import main_menu, second_menu
 import os
+import interpreter
 
 os.system('cls' if os.name == 'nt' else 'clear')
 
@@ -63,6 +64,7 @@ def comports():
 
 
 def start():
+    global massive
     print('Сейчас вам будет предложенно выбрать COM (serial) порт, к которому подключено ваше устройство. '
           'Далее вы перейдете к настройке устройства. \nЕсли вы не увидите подключенное устройство, введите \'help\''
           'и следуйте инструкциям\n\n')
@@ -75,6 +77,20 @@ def start():
 
     selected_port = selector(serial_scanner())
     print(f'Вы выбрали {Fore.RED + selected_port}', Fore.WHITE)
+
+    flag = 1
+    while flag == 1:
+        fl_er, massive = interpreter.numbers_to_bin(interpreter.input_numbers())
+
+        if fl_er:
+            # если функция выдала ошибку то мы спрашиваем у пользователя и вводим флаг,
+            # отвечающий за продолжения или выход из цикла
+            flag = int(input('Если вы хотите ввести данные заново введите 1, выйти - введите 0: ——> '))
+        else:
+            # если ошибки нет, то выходим из цикла
+            flag = 0
+
+
 
 
 def help():
@@ -104,6 +120,6 @@ if __name__ == '__main__':
     #
     # print(datetime.datetime.now() - start)
     # print(received)
-    # # start()
+    # start()
 
-    menu()
+    start()
