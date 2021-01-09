@@ -3,11 +3,12 @@ from serial_port_scanner import serial_scanner
 from menus import main_menu, second_menu
 import os
 
-
+os.system('cls' if os.name == 'nt' else 'clear')
 # —————————————————————— Main (first) menu of the program ——————————————————————
 
 
 def menu():
+
     while True:
         menu_choice = input(Fore.WHITE + main_menu)
         menu_choice = menu_choice.lower()
@@ -33,8 +34,10 @@ def main():
         menu_choice = menu_choice.lower()
         if menu_choice == 'com':
             os.system('cls' if os.name == 'nt' else 'clear')
+            print('\n\n')
             comports()
             main()
+            break
 
         if menu_choice == 'start':
             os.system('cls' if os.name == 'nt' else 'clear')
@@ -51,7 +54,8 @@ def main():
             break
 
         else:
-            print("Введено некорректное значение")
+            os.system('cls' if os.name == 'nt' else 'clear')
+            print(Fore.RED + "Введено некорректное значение", Fore.WHITE)
 
 
 def comports():
@@ -76,29 +80,31 @@ def start():
 
 def help():
     print("справка по работе программы")
-    print("")
+    print("}{0tt@бы4")
 
 
 if __name__ == '__main__':
-    import time
-    import serial
-    import datetime
+    # import time
+    # import serial
+    # import datetime
+    #
+    # ser = serial.Serial('/dev/cu.usbserial-1410')
+    # received = []
+    #
+    # ser.write(b'begin\n')
+    # time.sleep(5)
+    #
+    # start = datetime.datetime.now()
+    # for i in range(1, 100):
+    #     ser.write(b'test%i\r\n' % i)
+    #     time.sleep(0.005)
+    #     while ser.inWaiting() > 0:
+    #         line = ser.readline()
+    #         if line:
+    #             received.append(line.decode().strip())
+    #
+    # print(datetime.datetime.now() - start)
+    # print(received)
+    # # start()
 
-    ser = serial.Serial('/dev/cu.usbserial-1410')
-    received = []
-
-    ser.write(b'begin\n')
-    time.sleep(5)
-
-    start = datetime.datetime.now()
-    for i in range(1, 100):
-        ser.write(b'test%i\r\n' % i)
-        time.sleep(0.005)
-        while ser.inWaiting() > 0:
-            line = ser.readline()
-            if line:
-                received.append(line.decode().strip())
-
-    print(datetime.datetime.now() - start)
-    print(received)
-    # start()
+    menu()

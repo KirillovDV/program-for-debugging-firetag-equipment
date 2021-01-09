@@ -39,8 +39,8 @@ def input_numbers():
     return [ID, team, damage, ff, hp, capacity, ammo]
 
 
-def interpreter():
-    def numbers_to_bin(massive_variable):
+class Interpreter:
+    def numbers_to_bin(self, massive_variable):
         # флаг ошибки
         flag_error = False
         # массив допустимых значений
@@ -80,12 +80,13 @@ def interpreter():
         if fl_er:
             # если функция выдала ошибку то мы спрашиваем у пользователя и вводим флаг,
             # отвечающий за продолжения или выход из цикла
-            flag = int(input('Если вы хотите ввести данные заново введите 1, выйти - введите 0:  '))
+            flag = int(input('Если вы хотите ввести данные заново введите 1, выйти - введите 0: ——> '))
         else:
             # если ошибки нет, то выходим из цикла
             flag = 0
 
 
 if __name__ == '__main__':
-    interpreter()
+    Interpreter.numbers_to_bin(input_numbers())
+
 
