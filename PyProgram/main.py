@@ -4,7 +4,6 @@ from menus import main_menu, second_menu
 import os
 
 os.system('cls' if os.name == 'nt' else 'clear')
-# —————————————————————— Main (first) menu of the program ——————————————————————
 
 
 def menu():
@@ -80,7 +79,7 @@ def start():
 
 def help():
     print("справка по работе программы")
-    print("}{0tt@бы4")
+    print("")
 
 
 if __name__ == '__main__':
