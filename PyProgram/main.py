@@ -4,12 +4,12 @@ from literals import main_menu, second_menu
 import os
 import interpreter
 
-os.system('cls' if os.name == 'nt' else 'clear')
+os.system('cls' if os.name == 'nt' else 'clear')  # Отчистака терминала/командной строки
 
 
-def menu():
+def menu():    # Отчистака терминала/командной строки
 
-    while True:
+    while True:  #
         menu_choice = input(Fore.WHITE + main_menu)
         menu_choice = menu_choice.lower()
 

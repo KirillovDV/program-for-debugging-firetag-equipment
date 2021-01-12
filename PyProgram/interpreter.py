@@ -1,4 +1,13 @@
 
+# ID = 1-128 type: int
+# team = 1-4 type: int
+# damage = 1,2,4,5,7,10,15,17,20,25,30,35,40,50,75,100   type: int
+# FF = 0,1 type: int
+# HP = 1-256 type: int
+# capacity = 1-256 type: int
+# ammo = 1-256 type: int
+
+
 def input_numbers():
     ID = input('Ведите ID (от 1 до 128): ——> ')
     team = input('Ведите команду (от 1 до 4):  ')
