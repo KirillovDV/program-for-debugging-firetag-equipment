@@ -1,3 +1,6 @@
+from colorama import Fore
+
+
 def serial_scanner():
     import serial.tools.list_ports
 
@@ -10,3 +13,8 @@ def serial_scanner():
     # for element in connected:
     #     print(element)
     return connected
+
+
+def comports():
+    for element in serial_scanner():
+        print(Fore.RED + element, Fore.WHITE)

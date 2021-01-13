@@ -1,5 +1,5 @@
 from colorama import Fore
-from serial_port_scanner import serial_scanner
+from serial_port_tools import serial_scanner, comports
 from literals import main_menu, second_menu
 import os
 import interpreter
@@ -7,63 +7,60 @@ import interpreter
 os.system('cls' if os.name == 'nt' else 'clear')  # Отчистака терминала/командной строки
 
 
-def menu():    # Отчистака терминала/командной строки
+def menu():  # Главное меню
 
-    while True:  #
-        menu_choice = input(Fore.WHITE + main_menu)
-        menu_choice = menu_choice.lower()
-
-        if menu_choice == 'exit':
-            os.system('cls' if os.name == 'nt' else 'clear')
-            exit()
-
-        if menu_choice == 'start':
-            os.system('cls' if os.name == 'nt' else 'clear')
-            main()
-            break
-
-        else:
-            os.system('cls' if os.name == 'nt' else 'clear')
-            print(Fore.RED + "Введено некорректное значение", Fore.WHITE)
-            menu()
-
-
-def main():
     while True:
-        menu_choice = input(second_menu)
-        menu_choice = menu_choice.lower()
+        menu_choice = input(Fore.WHITE + main_menu)  # Запрос ввода пункта меню (внешний вид из фала literals.py)
+        menu_choice = menu_choice.lower()  # Приведение введенного значения к нижнему регистру
+
+        if menu_choice == 'exit':  # Если введено "Exit"
+            os.system('cls' if os.name == 'nt' else 'clear')  # Отчистака терминала/командной строки
+            exit()  # Выход из программы
+
+        if menu_choice == 'start':  # Если введено "Start"
+            os.system('cls' if os.name == 'nt' else 'clear')  # Отчистака терминала/командной строки
+            main()  # Вызов функции main()
+            break  # Выход из цикла
+
+        else:  # Если введенно некорректное значение
+            os.system('cls' if os.name == 'nt' else 'clear')  # Отчистака терминала/командной строки
+            print(Fore.RED + "Введено некорректное значение", Fore.WHITE)
+            menu()  # Вызов функции menu()
+
+
+def main():  # Второе меню
+    while True:
+        menu_choice = input(second_menu)  # Запрос ввода пункта меню (внешний вид из literals.py)
+        menu_choice = menu_choice.lower()  # Приведение введенного значения к нижнему регистру
         if menu_choice == 'com':
-            os.system('cls' if os.name == 'nt' else 'clear')
+            os.system('cls' if os.name == 'nt' else 'clear')  # Отчистака терминала/командной строки
             print('\n\n')
-            comports()
+            comports()  # Вывод обнаруженных COM (serial) портов (из serial_port_tools.py)
+            input('\nНажмите \'Enter\', что бы выйти в меню')
+            os.system('cls' if os.name == 'nt' else 'clear')  # Отчистака терминала/командной строки
             main()
-            break
+            break  # выход из цикла
 
         if menu_choice == 'start':
-            os.system('cls' if os.name == 'nt' else 'clear')
-            start()
+            os.system('cls' if os.name == 'nt' else 'clear')  # Отчистака терминала/командной строки
+            configurator()
             break
 
         if menu_choice == 'exit':
-            os.system('cls' if os.name == 'nt' else 'clear')
+            os.system('cls' if os.name == 'nt' else 'clear')  # Отчистака терминала/командной строки
             exit()
 
         if menu_choice == 'menu':
-            os.system('cls' if os.name == 'nt' else 'clear')
+            os.system('cls' if os.name == 'nt' else 'clear')  # Отчистака терминала/командной строки
             menu()
             break
 
         else:
-            os.system('cls' if os.name == 'nt' else 'clear')
+            os.system('cls' if os.name == 'nt' else 'clear')  # Отчистака терминала/командной строки
             print(Fore.RED + "Введено некорректное значение", Fore.WHITE)
 
 
-def comports():
-    for element in serial_scanner():
-        print(Fore.RED + element, Fore.WHITE)
-
-
-def start():
+def configurator():
     print('Сейчас вам будет предложенно выбрать COM (serial) порт, к которому подключено ваше устройство. '
           'Далее вы перейдете к настройке устройства. \nЕсли вы не увидите подключенное устройство, введите \'help\''
           'и следуйте инструкциям\n\n')
@@ -71,8 +68,8 @@ def start():
     def selector(connected):
         for i, element in enumerate(connected):
             print(Fore.WHITE + f'Введите {i + 1} если хотите выбрать СОМ-порт {Fore.RED + element}', Fore.WHITE)
-        number_com = int(input())
-        return connected[number_com - 1]
+        number_com = input()
+        return connected[int(number_com) - 1]
 
     selected_port = selector(serial_scanner())
     print(f'Вы выбрали {Fore.RED + selected_port}', Fore.WHITE)
