@@ -1,6 +1,6 @@
 from colorama import Fore
 from serial_port_tools import serial_scanner, comports
-from literals import main_menu, second_menu
+from literals import main_menu, second_menu, help
 import os
 import interpreter
 
@@ -86,11 +86,15 @@ def configurator():
             # если ошибки нет, то выходим из цикла
             flag = 0
         print(massive)
+        print(f'type of "massive is {type(massive)}"')
+        massive = [bin(i) for i in massive]
+        print(massive)
+        print(f'type of "massive is {type(massive)}"')
 
 
 def help():
     print("справка по работе программы")
-    print("")
+    print(help)
 
 
 if __name__ == '__main__':
