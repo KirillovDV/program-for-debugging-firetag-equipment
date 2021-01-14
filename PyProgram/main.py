@@ -1,6 +1,6 @@
 from colorama import Fore
 from serial_port_tools import serial_scanner, comports
-from literals import main_menu, second_menu, help
+from literals import main_menu, second_menu, info
 import os
 import interpreter
 
@@ -10,7 +10,7 @@ os.system('cls' if os.name == 'nt' else 'clear')  # Отчистака терм�
 def menu():  # Главное меню
 
     while True:
-        menu_choice = input(Fore.WHITE + main_menu)  # Запрос ввода пункта меню (внешний вид из фала literals.py)
+        menu_choice = input(Fore.CYAN + main_menu)  # Запрос ввода пункта меню (внешний вид из фала literals.py)
         menu_choice = menu_choice.lower()  # Приведение введенного значения к нижнему регистру
 
         if menu_choice == 'exit':  # Если введено "Exit"
@@ -22,9 +22,15 @@ def menu():  # Главное меню
             main()  # Вызов функции main()
             break  # Выход из цикла
 
+        if menu_choice == 'info()':  # Если введено "Start"
+            os.system('cls' if os.name == 'nt' else 'clear')  # Отчистака терминала/командной строки
+            help()  # Вызов функции main()
+            break  # Выход из цикла
+
+
         else:  # Если введенно некорректное значение
             os.system('cls' if os.name == 'nt' else 'clear')  # Отчистака терминала/командной строки
-            print(Fore.RED + "Введено некорректное значение", Fore.WHITE)
+            print(Fore.RED + "Введено некорректное значение", Fore.CYAN)
             menu()  # Вызов функции menu()
 
 
@@ -39,12 +45,12 @@ def main():  # Второе меню
             input('\nНажмите \'Enter\', что бы выйти в меню')
             os.system('cls' if os.name == 'nt' else 'clear')  # Отчистака терминала/командной строки
             main()
-            break  # выход из цикла
+            break  # Выход из цикла
 
         if menu_choice == 'start':
             os.system('cls' if os.name == 'nt' else 'clear')  # Отчистака терминала/командной строки
             configurator()
-            break
+            break  # Выход из цикла
 
         if menu_choice == 'exit':
             os.system('cls' if os.name == 'nt' else 'clear')  # Отчистака терминала/командной строки
@@ -52,27 +58,27 @@ def main():  # Второе меню
 
         if menu_choice == 'menu':
             os.system('cls' if os.name == 'nt' else 'clear')  # Отчистака терминала/командной строки
-            menu()
-            break
+            menu()  # Вызов главного меню (выход назад)
+            break  # Выход из цикла
 
         else:
             os.system('cls' if os.name == 'nt' else 'clear')  # Отчистака терминала/командной строки
-            print(Fore.RED + "Введено некорректное значение", Fore.WHITE)
+            print(Fore.RED + "Введено некорректное значение", Fore.CYAN)
 
 
 def configurator():
     print('Сейчас вам будет предложенно выбрать COM (serial) порт, к которому подключено ваше устройство. '
-          'Далее вы перейдете к настройке устройства. \nЕсли вы не увидите подключенное устройство, введите \'help\''
+          'Далее вы перейдете к настройке устройства. \nЕсли вы не увидите подключенное устройство, введите \'info()\''
           'и следуйте инструкциям\n\n')
 
     def selector(connected):
         for i, element in enumerate(connected):
-            print(Fore.WHITE + f'Введите {i + 1} если хотите выбрать СОМ-порт {Fore.RED + element}', Fore.WHITE)
+            print(Fore.CYAN + f'Введите {i + 1} если хотите выбрать СОМ-порт {Fore.RED + element}', Fore.CYAN)
         number_com = input()
         return connected[int(number_com) - 1]
 
     selected_port = selector(serial_scanner())
-    print(f'Вы выбрали {Fore.RED + selected_port}', Fore.WHITE)
+    print(f'Вы выбрали {Fore.RED + selected_port}', Fore.CYAN)
 
     flag = 1
     while flag == 1:
@@ -85,18 +91,15 @@ def configurator():
         else:
             # если ошибки нет, то выходим из цикла
             flag = 0
+            # TODO
         print(massive)
-        print(f'type of "massive is {type(massive)}"')
-        massive = [bin(i) for i in massive]
-        print(massive)
-        print(f'type of "massive is {type(massive)}"')
 
 
 def help():
     print("справка по работе программы")
-    print(help)
+    print(info)
 
 
 if __name__ == '__main__':
 
-    menu()
+    help()

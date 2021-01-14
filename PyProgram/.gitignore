@@ -2,3 +2,4 @@ tests.py
 TUI
 venv
 .idea
+interpreter_tests.py
