@@ -7,7 +7,6 @@
 # capacity = 1-256 type: int
 # ammo = 1-256 type: int
 
-
 def input_numbers():
     ID = input('Ведите ID (от 1 до 128): ——> ')
     team = input('Ведите команду (от 1 до 4):  ')
