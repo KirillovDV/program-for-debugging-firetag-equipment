@@ -22,7 +22,7 @@ def menu():  # Главное меню
             main()  # Вызов функции main()
             break  # Выход из цикла
 
-        if menu_choice == 'info()':  # Если введено "Start"
+        if menu_choice == 'help':  # Если введено "Start"
             os.system('cls' if os.name == 'nt' else 'clear')  # Отчистака терминала/командной строки
             help()  # Вызов функции main()
             break  # Выход из цикла
@@ -97,8 +97,9 @@ def configurator():
 def help():
     print("справка по работе программы")
     print(info)
+    input('\nНажмите \'Enter\', что бы выйти в меню')
+    menu()
 
 
 if __name__ == '__main__':
-
-    help()
+    menu()
