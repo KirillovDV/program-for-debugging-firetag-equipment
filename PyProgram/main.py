@@ -4,7 +4,12 @@ from literals import main_menu, second_menu, info
 import os
 import interpreter
 
-os.system('cls' if os.name == 'nt' else 'clear')  # Отчистака терминала/командной строки
+
+def clear():
+    os.system('cls' if os.name == 'nt' else 'clear')
+
+
+clear()  # Отчистака терминала/командной строки
 
 
 def menu():  # Главное меню
@@ -14,21 +19,21 @@ def menu():  # Главное меню
         menu_choice = menu_choice.lower()  # Приведение введенного значения к нижнему регистру
 
         if menu_choice == 'exit':  # Если введено "Exit"
-            os.system('cls' if os.name == 'nt' else 'clear')  # Отчистака терминала/командной строки
+            clear()  # Отчистака терминала/командной строки
             exit()  # Выход из программы
 
         if menu_choice == 'start':  # Если введено "Start"
-            os.system('cls' if os.name == 'nt' else 'clear')  # Отчистака терминала/командной строки
+            clear()  # Отчистака терминала/командной строки
             main()  # Вызов функции main()
             break  # Выход из цикла
 
         if menu_choice == 'help':  # Если введено "Start"
-            os.system('cls' if os.name == 'nt' else 'clear')  # Отчистака терминала/командной строки
+            clear()  # Отчистака терминала/командной строки
             help()  # Вызов функции main()
             break  # Выход из цикла
 
         else:  # Если введенно некорректное значение
-            os.system('cls' if os.name == 'nt' else 'clear')  # Отчистака терминала/командной строки
+            clear()  # Отчистака терминала/командной строки
             print(Fore.RED + "Введено некорректное значение", Fore.CYAN)
             menu()  # Вызов функции menu()
 
@@ -38,30 +43,30 @@ def main():  # Второе меню
         menu_choice = input(second_menu)  # Запрос ввода пункта меню (внешний вид из literals.py)
         menu_choice = menu_choice.lower()  # Приведение введенного значения к нижнему регистру
         if menu_choice == 'com':
-            os.system('cls' if os.name == 'nt' else 'clear')  # Отчистака терминала/командной строки
+            clear()  # Отчистака терминала/командной строки
             print('\n\n')
             comports()  # Вывод обнаруженных COM (serial) портов (из serial_port_tools.py)
             input('\nНажмите \'Enter\', что бы выйти в меню')
-            os.system('cls' if os.name == 'nt' else 'clear')  # Отчистака терминала/командной строки
+            clear()  # Отчистака терминала/командной строки
             main()
             break  # Выход из цикла
 
         if menu_choice == 'start':
-            os.system('cls' if os.name == 'nt' else 'clear')  # Отчистака терминала/командной строки
+            clear()  # Отчистака терминала/командной строки
             configurator()
             break  # Выход из цикла
 
         if menu_choice == 'exit':
-            os.system('cls' if os.name == 'nt' else 'clear')  # Отчистака терминала/командной строки
+            clear()  # Отчистака терминала/командной строки
             exit()
 
         if menu_choice == 'menu':
-            os.system('cls' if os.name == 'nt' else 'clear')  # Отчистака терминала/командной строки
+            clear()  # Отчистака терминала/командной строки
             menu()  # Вызов главного меню (выход назад)
             break  # Выход из цикла
 
         else:
-            os.system('cls' if os.name == 'nt' else 'clear')  # Отчистака терминала/командной строки
+            clear()  # Отчистака терминала/командной строки
             print(Fore.RED + "Введено некорректное значение", Fore.CYAN)
 
 
