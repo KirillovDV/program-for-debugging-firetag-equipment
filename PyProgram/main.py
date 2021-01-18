@@ -1,14 +1,15 @@
-from colorama import Fore
+from colorama import Fore, Style
 from serial_port_tools import serial_scanner, comports
 from literals import main_menu, second_menu, info
 import os
 import interpreter
 
 
-def clear():
+def clear():  # функция отчистки терминала/командной строки
     os.system('cls' if os.name == 'nt' else 'clear')
 
 
+print(Style.RESET_ALL)
 clear()  # Отчистака терминала/командной строки
 
 
@@ -100,7 +101,7 @@ def configurator():
 
 
 def help():
-    print("справка по работе программы")
+    print("справка по работе программы\n")
     print(info)
     input('\nНажмите \'Enter\', что бы выйти в меню')
     menu()

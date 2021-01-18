@@ -17,7 +17,7 @@ def serial_scanner():
 
 def comports():
     for element in serial_scanner():
-        print(Fore.RED + element, Fore.WHITE)
+        print(Fore.RED + element, Fore.CYAN)
 
 
 def writer(massive, selected_port):
