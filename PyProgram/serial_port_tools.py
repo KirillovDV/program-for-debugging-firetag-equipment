@@ -21,4 +21,5 @@ def comports():
 
 
 def writer(massive, selected_port):
-    pass
+    import serial
+    
