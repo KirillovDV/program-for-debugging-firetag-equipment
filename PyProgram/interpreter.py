@@ -47,5 +47,6 @@ def numbers_to_bin(massive_variable):
                 print('Паблитто Даунитто, ты ввел недопустимые значения в ', massive_print[i])
         except ValueError:
             print('Паблитто Даунитто, ты ввел недопустимый формат в ', massive_print[i])
+            # TODO Обработчик ошибок на этапе ввода данных
 
     return flag_error, massive_variable
