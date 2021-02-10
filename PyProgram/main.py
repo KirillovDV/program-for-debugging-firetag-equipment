@@ -92,22 +92,24 @@ def configurator():
         selected_port = selector(serial_scanner())
         if selected_port:
             flag = 0
+            print(f'Вы выбрали {Fore.RED + selected_port}', Fore.CYAN)
         else:
             flag = 1
             print('Вы ввели некорректное значение. Исправте ошибку')
-    print(f'Вы выбрали {Fore.RED + selected_port}', Fore.CYAN)
 
     flag = 1
     fl_er, massive = interpreter.numbers_to_bin(interpreter.input_numbers())
-    while flag == 1:
-
-        if fl_er:
-            # если функция выдала ошибку то мы спрашиваем у пользователя и вводим флаг,
-            # отвечающий за продолжения или выход из цикла
+    while flag == 1 and fl_er == True:
+        # если функция выдала ошибку то мы спрашиваем у пользователя и вводим флаг,
+        # отвечающий за продолжения или выход из цикла
+        try:
             flag = int(input('Если вы хотите ввести данные заново введите 1, выйти - введите 0: ——> '))
+        except ValueError:
+            flag = 1
+            print('Вы ввели некорректное значение')
         else:
             # если ошибки нет, то выходим из цикла
-            flag = 0
+            flag = 1
             # TODO
         print(massive)
     input("Eckb pjbnnt lf tap enter")
