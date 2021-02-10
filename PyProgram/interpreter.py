@@ -8,6 +8,7 @@
 # ammo = 1-256 type: int
 
 def input_numbers():
+    #мы получаем от пользователя переменные в формате str
     ID = input('Ведите ID (от 1 до 128): ——> ')
     team = input('Ведите команду (от 1 до 4):  ')
     damage = input('Ведите урон (1 / 2 / 4 / 5 / 7 / 10 / 15 / 17 / 20 / 25 / 30 / 35 / 40 / 50 / 75 / 100): ——> ')
@@ -15,10 +16,11 @@ def input_numbers():
     hp = input('Ведите кол-во жизней (от 1 до 256): ——> ')
     capacity = input('Ведите кол-во патронов в магазине (от 1 до 256): ——> ')
     ammo = input('Ведите ко-во магазинов (от 1 до 256): ——> ')
-    return [ID, team, damage, ff, hp, capacity, ammo]
+    return [ID, team, damage, ff, hp, capacity, ammo] #отдаем на выход список состоящий из переменных str
 
 
 def numbers_to_bin(massive_variable):
+    #принимаем на вход список состоящий из переменных str
     # флаг ошибки
     flag_error = False
     # массив допустимых значений
@@ -35,20 +37,18 @@ def numbers_to_bin(massive_variable):
     # цикл перебора переменных
     for i, variable in enumerate(massive_variable):
         try:
-            variable = int(variable)
-            if variable in massive_right[i]:
-                # если число есть в диапазоне то обрабатываем его
+            variable = int(variable) #это строчка нужна для обработки ошибки, когда пользователь вводит не цифры
+            if variable in massive_right[i]: 
+                # if проверяет есть ли число в диапазоне правильных значений - если да,то обрабатываем его
                 a = bin(massive_right[i].index(variable))[2:]  # переводим в двоичную систему и отсекаем 0b
                 variable = '0' * (8 - len(a)) + a  # дописываем нули до 8 бит
-                massive_variable[i] = variable  # записываем в тот же массив
+                massive_variable[i] = variable  # записываем в тот же массив в формате str
             else:
-                # если нет то сообщаем об ошибке через флаг, даже если она всего лишь одна
+                # если числа нет в диапазоне допустимых значений, то сообщаем об ошибке через флаг, даже если ошибка всего одна
                 flag_error = True
                 print('Паблитто Даунитто, ты ввел недопустимые значения в ', massive_print[i])
         except ValueError:
+            #обработка ошибки, когда пользователь вводит не цифры
             print('Паблитто Даунитто, ты ввел недопустимый формат в ', massive_print[i])
-            # TODO Обработчик ошибок на этапе ввода данных
 
     return flag_error, massive_variable
-
-рлорлоро
