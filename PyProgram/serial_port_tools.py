@@ -18,3 +18,13 @@ def serial_scanner():
 def comports():
     for element in serial_scanner():
         print(Fore.RED + element, Fore.CYAN)
+
+
+def com_writer(massive, selected_port):
+    import serial
+    ser = serial.Serial(selected_port, 9600, timeout=1)
+    for e in massive:
+        ser.write(bytes(e, encoding='utf8'))
+        result = ser.readline()
+        print(result.decode('utf-8'))
+    ser.close()

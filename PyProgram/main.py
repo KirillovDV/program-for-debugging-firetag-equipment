@@ -1,5 +1,5 @@
 from colorama import Fore, Style
-from serial_port_tools import serial_scanner, comports
+from serial_port_tools import serial_scanner, comports, com_writer
 from literals import main_menu, second_menu, info
 import os
 import interpreter
@@ -80,14 +80,25 @@ def configurator():
         for i, element in enumerate(connected):
             print(Fore.CYAN + f'Введите {i + 1} если хотите выбрать СОМ-порт {Fore.RED + element}', Fore.CYAN)
         number_com = input()
-        return connected[int(number_com) - 1]
-
-    selected_port = selector(serial_scanner())
+        if number_com in range(1, len(connected)+1) and type(number_com) == int:
+            print("Все норм")
+            return connected[int(number_com) - 1]
+    #     else:
+    #         return False
+    # # todo обработчик
+    flag = 1
+    while flag == 1:
+        selected_port = selector(serial_scanner())
+        if selected_port:
+            flag = 0
+        else:
+            flag = 1
+            print('Вы ввели некорректное значение. Исправте ошибку')
     print(f'Вы выбрали {Fore.RED + selected_port}', Fore.CYAN)
 
     flag = 1
+    fl_er, massive = interpreter.numbers_to_bin(interpreter.input_numbers())
     while flag == 1:
-        fl_er, massive = interpreter.numbers_to_bin(interpreter.input_numbers())
 
         if fl_er:
             # если функция выдала ошибку то мы спрашиваем у пользователя и вводим флаг,
@@ -98,14 +109,18 @@ def configurator():
             flag = 0
             # TODO
         print(massive)
+    input("Eckb pjbnnt lf tap enter")
+    com_writer(massive, selected_port)
 
 
 def help():
     print("справка по работе программы\n")
     print(info)
     input('\nНажмите \'Enter\', что бы выйти в меню')
+    clear()
     menu()
 
 
 if __name__ == '__main__':
-    menu()
+    # menu()
+    configurator()
