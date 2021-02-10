@@ -50,3 +50,5 @@ def numbers_to_bin(massive_variable):
             # TODO Обработчик ошибок на этапе ввода данных
 
     return flag_error, massive_variable
+
+рлорлоро
