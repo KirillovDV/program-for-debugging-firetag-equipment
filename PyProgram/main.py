@@ -144,8 +144,6 @@ def configurator():
     interpreter()
 
 
-
-
 def help():
     print("справка по работе программы\n")
     print(info)
