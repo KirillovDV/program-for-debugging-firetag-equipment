@@ -1,5 +1,5 @@
 from colorama import Fore, Style
-from serial_port_tools import serial_scanner, comports, interpreter
+from serial_port_tools import serial_scanner, comports, numbers_to_bin
 from literals import main_menu, second_menu, info
 import os
 
@@ -141,7 +141,26 @@ def configurator():
             flag = 1
             print('Вы ввели некорректное значение. Исправте ошибку')
 
-    interpreter()
+    massive = False  #инициализация переменной для входа в цикл
+    #внешний цикл для обработки ошибок при неправильном вводе переменных
+    while not massive:
+        massive = numbers_to_bin() # если все верно то цикл прервется
+        # если функция выдала ошибку то мы вводим флаг для входа во внутренний цикл отвечающий за продолжения или выход из ввода переменных
+        if massive == False:
+            flag = 1
+        else:
+            flag = 0
+        #внутренний цикл для обработки ошибки неправильного ввода команды 0 или 1    
+        while flag == 1:
+            vvod = input('Если вы хотите ввести данные заново введите 1, выйти - введите 0: ——> ')
+            if vvod == '1':
+                flag = 0 #выход из внутреннего цикла, в то время как внешний срабатывает и начинает ввод переменных
+            elif vvod == '0':
+                flag = 0 #выход из внутреннего цикла
+                massive = True #выход из внешнего цикла
+            else:
+                flag = 1 #зацикливание ввода команд 0 или 1
+                print('Вы ввели некорректное значение')
 
 
 def help():
