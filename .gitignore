@@ -6,3 +6,4 @@ GUI ElectronJS/node_modules
 GUI ElectronJS/package-lock.json
 GUI ElectronJS/templates/settings_modal.html
 venv
+.idea
