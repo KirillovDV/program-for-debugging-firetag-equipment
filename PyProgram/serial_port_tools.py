@@ -1,4 +1,5 @@
 from colorama import Fore
+import serial
 
 
 def serial_scanner():
@@ -21,7 +22,7 @@ def comports():
 
 
 def com_writer(massive, selected_port):
-    import serial
+
     ser = serial.Serial(selected_port, 9600, timeout=1)
     for e in massive:
         ser.write(bytes(e, encoding='utf8'))
