@@ -161,7 +161,7 @@ def configurator():
             else:
                 flag = 1 #зацикливание ввода команд 0 или 1
                 print('Вы ввели некорректное значение')
-
+    print(massive)
 
 def help():
     print("справка по работе программы\n")
