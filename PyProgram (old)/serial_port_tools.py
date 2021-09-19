@@ -2,6 +2,7 @@ from colorama import Fore
 import serial
 
 
+
 def serial_scanner():
     import serial.tools.list_ports
 
@@ -22,13 +23,23 @@ def comports():
 
 
 def com_writer(massive, selected_port):
+    serialPort = serial.Serial(port=selected_port, baudrate=9600, bytesize=8, timeout=2, stopbits=serial.STOPBITS_ONE)
+    serialString = ""  # Used to hold data coming over UART
+    while 1:
+        # Wait until there is data waiting in the serial buffer
+        serialPort.write()
 
-    ser = serial.Serial(selected_port, 9600, timeout=1)
-    for e in massive:
-        ser.write(bytes(e, encoding='utf8'))
-        result = ser.readline()
-        print(result.decode('utf-8'))
-    ser.close()
+
+        if serialPort.in_waiting > 0:
+
+            # Read data out of the buffer until a carraige return / new line is found
+            serialString = serialPort.readline()
+
+            # Print the contents of the serial data
+            try:
+                print(serialString.decode("Ascii"))
+            except:
+                pass
 
     
 def numbers_to_bin():
@@ -80,3 +91,4 @@ def numbers_to_bin():
         return massive_variable
     else:
         return False #иначе ошибка
+

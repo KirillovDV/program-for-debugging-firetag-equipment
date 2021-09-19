@@ -1,5 +1,6 @@
+# from PyProgram.serial_port_tools import com_writer
 from colorama import Fore, Style
-from serial_port_tools import serial_scanner, comports, numbers_to_bin
+from serial_port_tools import serial_scanner, comports, numbers_to_bin, reader, com_writer
 from literals import main_menu, second_menu, info
 import os
 
@@ -54,6 +55,11 @@ def main():  # Второе меню
         if menu_choice == 'start':
             clear()  # Отчистака терминала/командной строки
             configurator()
+            break  # Выход из цикла
+        
+        if menu_choice == 'reader':
+            clear()  # Отчистака терминала/командной строки
+            reader()
             break  # Выход из цикла
 
         if menu_choice == 'exit':
@@ -161,7 +167,10 @@ def configurator():
             else:
                 flag = 1 #зацикливание ввода команд 0 или 1
                 print('Вы ввели некорректное значение')
-    print(massive)
+    print(massive)  
+    com_writer(massive, selected_port)      
+    
+        
 
 def help():
     print("справка по работе программы\n")
