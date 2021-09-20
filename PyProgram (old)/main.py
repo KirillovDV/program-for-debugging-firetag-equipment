@@ -126,18 +126,18 @@ def configurator():
           'введите \'info\' '
           'и следуйте инструкциям\n\n')
 
-    def selector(connected):
-        for i, element in enumerate(connected):
-            print(Fore.WHITE + f'Введите {i + 1} если хотите выбрать СОМ-порт {Fore.RED + element}', Fore.WHITE)
-        try:
-            number_com = int(input())
-            if int(number_com) in range(1, len(connected) + 1):
-                print("Все норм")
-                return connected[int(number_com) - 1]
-        except ValueError:
-            return False
-
-    flag = 1
+    # def selector(connected):
+    #     for i, element in enumerate(connected):
+    #         print(Fore.WHITE + f'Введите {i + 1} если хотите выбрать СОМ-порт {Fore.RED + element}', Fore.WHITE)
+    #     try:
+    #         number_com = int(input())
+    #         if int(number_com) in range(1, len(connected) + 1):
+    #             print("Все норм")
+    #             return connected[int(number_com) - 1]
+    #     except ValueError:
+    #         return False
+    #
+    # flag = 1
     while flag == 1:
         selected_port = selector(serial_scanner())
         if selected_port:
