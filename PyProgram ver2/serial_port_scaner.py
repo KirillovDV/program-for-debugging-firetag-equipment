@@ -34,6 +34,7 @@ while flag == 1:
         flag = 1
         print('Вы ввели некорректное значение. Исправте ошибку')
 
+
 # def comports():
 #     for element in serial_scanner():
 #         print(Fore.RED + element, Fore.CYAN)
